@@ -1,0 +1,38 @@
+{
+  "time" : {
+    "start" : 1471963325693,
+    "stop" : 1471963340909,
+    "duration" : 15216
+  },
+  "testSuites" : [ {
+    "uid" : "f490da137234d97f",
+    "name" : "HomePage Functionality",
+    "title" : "HomePage Functionality",
+    "time" : {
+      "start" : 1471963325693,
+      "stop" : 1471963340909,
+      "duration" : 15216
+    },
+    "statistic" : {
+      "total" : 1,
+      "passed" : 1,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "description" : null,
+    "testCases" : [ {
+      "uid" : "da2ea3f5eb2d5b01",
+      "name" : "Running Sample Test Gary",
+      "title" : "Running Sample Test Gary",
+      "time" : {
+        "start" : 1471963325693,
+        "stop" : 1471963340909,
+        "duration" : 15216
+      },
+      "severity" : "NORMAL",
+      "status" : "PASSED"
+    } ]
+  } ]
+}

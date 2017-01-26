@@ -1,0 +1,44 @@
+{
+  "uid" : "da2ea3f5eb2d5b01",
+  "name" : "Running Sample Test Gary",
+  "title" : "Running Sample Test Gary",
+  "time" : {
+    "start" : 1471963325693,
+    "stop" : 1471963340909,
+    "duration" : 15216
+  },
+  "summary" : {
+    "attachments" : 1,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : {
+    "value" : "",
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "f490da137234d97f",
+    "name" : "HomePage Functionality",
+    "title" : "HomePage Functionality"
+  },
+  "steps" : [ ],
+  "attachments" : [ {
+    "title" : "Screenshot",
+    "source" : "a7852d1b-70c8-4ed9-8fbb-a9a4b504e8c3-attachment.png",
+    "type" : "image/png",
+    "size" : 75392,
+    "uid" : "d1814efa5ee99ce0"
+  } ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "suite-name",
+    "value" : "HomePage Functionality"
+  }, {
+    "name" : "suite-title",
+    "value" : "HomePage Functionality"
+  } ],
+  "parameters" : [ ]
+}

@@ -1,0 +1,7 @@
+{
+  "loggingLevel": {
+    "INFO": "info",
+    "ERROR": "error"
+  },
+
+}
