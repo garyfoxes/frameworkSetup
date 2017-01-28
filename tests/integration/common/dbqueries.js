@@ -25,8 +25,8 @@ module.exports = function (dbDetails) {
         });
         return this;
     };
-    this.getAllQuestions = function (callback) {
-        var sql = 'select * from questions';
+    this.sqlMethod = function (callback) {
+        var sql = 'SQL STATEMENT';
         this.connection.query(sql, function (err, results, fields) {
             if (!err) {
                 callback(results);
@@ -34,63 +34,63 @@ module.exports = function (dbDetails) {
             }
         });
     };
-    this.removeQuestionById = function (questionId) {
-        var sql = 'DELETE FROM forum_questions WHERE id=' + questionId;
+    this.sqlMethod = function (questionId) {
+        var sql = 'SQL STATEMENT;
         this.connection.query(sql, function (err, results) {
             if (err) {
-                logger.log(data.loggingLevel.ERROR, 'Error Deleting Row With Question Id  ' + questionId + '' + err.stack);
+                logger.log(data.loggingLevel.ERROR, 'ERROR ' + questionId + '' + err.stack);
                 return;
             }
-            logger.log(data.loggingLevel.INFO, 'Successfully Deleted Row With Question Id ' + questionId);
+            logger.log(data.loggingLevel.INFO, 'ERROR' + questionId);
 
         });
     };
-    this.removeQuestionFromQuestionsTagsById = function (questionId) {
-        var sql = 'DELETE FROM forum_questions_tags WHERE question_id =' + questionId;
+    this.sqlMethod = function (questionId) {
+        var sql = 'SQL STATEMENT' + questionId;
         this.connection.query(sql, function (err, results) {
             if (err) {
-                logger.log(data.loggingLevel.ERROR, 'Error Deleting Row From Questions_Tags Table With Id  ' + questionId + '' + err.stack);
+                logger.log(data.loggingLevel.ERROR, 'ERROR' + questionId + '' + err.stack);
                 return;
             }
-            logger.log(data.loggingLevel.INFO, 'Successfully Deleted Row From Questions_Tags Table With Id ' + questionId);
+            logger.log(data.loggingLevel.INFO, 'ERROR' + questionId);
 
         });
     };
 
-    this.removeAnswerById = function (id) {
-        var sql = "DELETE FROM forum_answers WHERE id =" + id;
+    this.sqlMethod = function (id) {
+        var sql = "SQL STATEMENT" + id;
         this.connection.query(sql, function (err, results) {
             if (err) {
-                logger.log(data.loggingLevel.ERROR, 'Error Deleting Row From Answers Table With id  ' + id + '' + err.stack);
+                logger.log(data.loggingLevel.ERROR, 'ERROR' + id + '' + err.stack);
                 return;
             }
-            logger.log(data.loggingLevel.INFO, 'Successfully Deleted Row From Answers Table With id ' + id);
+            logger.log(data.loggingLevel.INFO, 'ERROR + id);
 
         });
     };
-    this.getAnswerIdFromTimeStamp = function (timestamp, callback) {
-        var sql = "Select id FROM forum_answers WHERE text like '%" + timestamp + "%'";
+    this.sqlMethod = function (timestamp, callback) {
+        var sql = "SQL STATEMENT '%" + timestamp + "%'";
         console.log(sql);
         this.connection.query(sql, function (err, results) {
             if (err) {
-                logger.log(data.loggingLevel.ERROR, 'Error Selecting Id From Answers Table With Timestamp  ' + timestamp + '' + err.stack);
+                logger.log(data.loggingLevel.ERROR, 'ERROR' + timestamp + '' + err.stack);
             }
             else{
-                logger.log(data.loggingLevel.INFO, 'Found Answer Id From Timestamp ' + timestamp);
+                logger.log(data.loggingLevel.INFO, 'ERROR' + timestamp);
                 callback(results[0].id);
             }
 
         });
     };
-    this.removeAnswersTagsById = function (id, callback) {
+    this.sqlMethod = function (id, callback) {
 
-        var sql = "DELETE FROM forum_answers_tags WHERE answer_id=" + id;
+        var sql = "SQL STATEMENT" + id;
         this.connection.query(sql, function (err, results) {
             if (err) {
-                logger.log(data.loggingLevel.ERROR, 'Error Deleting Row From Answers_Tags Table With id  ' + id + '' + err.stack);
+                logger.log(data.loggingLevel.ERROR, 'ERROR ' + id + '' + err.stack);
                 return;
             }
-            logger.log(data.loggingLevel.INFO, 'Successfully Deleted Row From Answers_Tags Table With id ' + id);
+            logger.log(data.loggingLevel.INFO, 'ERROR' + id);
         });
     };
 
