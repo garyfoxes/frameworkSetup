@@ -14,18 +14,9 @@ browser.sleep(1000).then(function () {
  })
 */
 
-var method = function () {
-    this.method = function () {
-      
-        helpers.getQuestionIDFromUrl().then(function (res) {
-            browser.params.questionID = parseInt(res);
-        });
-        return this;
-    };
 
-    this.postNewAnswer = function () {
+    this.method = function () {
         var time = Math.floor(Date.now() / 1000);
-        browser.params.answerTime = time;
         browser.manage().logs().get('browser').then(function(browserLog) {
             console.log('\n log: ' + require('util').inspect(browserLog));
         });
