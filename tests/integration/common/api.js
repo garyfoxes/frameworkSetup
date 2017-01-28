@@ -7,55 +7,51 @@ var data = require('./data.json');
 module.exports = function (baseUrl) {
 
 
-    this.getLoginToken = function (email, password) {
+    this.apiMethod = function (email, password) {
 
         return axios.post('postUrl',
             {
-                email: email,
-                password: password
+                postParam: value,
+                postParam: value
             }
         ).then(function (response) {
-            var loginToken = response.data.token;
-            logger.log(data.loggingLevel.INFO, 'Logged In With Email ' + email);
-            logger.log(data.loggingLevel.INFO, 'Login Token Is Now ' + loginToken);
-            browser.params.loginToken = loginToken;
+          
+           
         }).catch(function (error) {
-            logger.log(data.loggingLevel.ERROR, 'ERROR GETTING LOGIN TOKEN' + error);
+            logger.log(data.loggingLevel.ERROR, 'MESSAGE' + error);
         });
     };
 
-    this.postQuestion = function (token, text, description) {
+    this.apiMethod = function (parameters) {
         var config = {
 
             headers: {
-                'Authorization': 'Bearer ' + token
+                'HeaderField': 'Value'
             },
             timeout: 10000
         };
-        return axios.post(baseUrl + '/questions',
+        return axios.post('url',
             {
                 description: description,
                 text: text
             }, config
         ).then(function (response) {
-            var questionID = parseInt(response.data.content.id);
-            logger.log(data.loggingLevel.INFO, 'Question Id Is Now ' + questionID);
-            browser.params.questionID = questionID;
+            logger.log(data.loggingLevel.INFO, 'Message' + questionID);
+            browser.params.varaible = value;
         }).catch(function (error) {
-            browser.params.questionID = 0;
-            logger.log(data.loggingLevel.ERROR, 'ERROR POSTING QUESTION ' + error);
+            logger.log(data.loggingLevel.ERROR, 'ERROR' + error);
         });
     };
-    this.postAnswerApi = function (token, questionID, text) {
+    this.apiMethod = function (params) {
         var time = Math.floor(Date.now() / 1000) + Math.floor((Math.random() * 1000) + 1);
         var config = {
 
             headers: {
-                'Authorization': 'Bearer ' + token
+                'Header': 'Value'
             },
             timeout: 10000
         };
-        return axios.post(baseUrl + '/questions/' + questionID + '/answers',
+        return axios.post('url',
             {
                 text: text + time
             }, config
@@ -70,38 +66,22 @@ module.exports = function (baseUrl) {
         });
     };
 
-    this.postVoteUpApi = function (token, questionID, answerID) {
+    this.apiCall = function (parameters) {
         var config = {
 
             headers: {
-                'Authorization': 'Bearer ' + token
+                'HeaderField': 'value'
             },
             timeout: 10000
         };
-        return axios.post(baseUrl + '/questions/' + questionID + '/answers/' + answerID + '/vote',
+        return axios.post('url',
             {
-                state: '+1'
+                postParam: 'value'
             }, config
         ).then(function (response) {
-            logger.log(data.loggingLevel.INFO, 'Successfully Voted Up');
+            logger.log(data.loggingLevel.INFO, 'Message');
         }).catch(function (error) {
-            logger.log(data.loggingLevel.ERROR, 'ERROR Voting UP ' + error);
-        });
-    };
-
-    this.postMultipleAnswersApi = function () {
-        var me = this;
-        var counter = 0;
-        var testParams = [data.users.userA, data.users.userB, data.users.userC];
-        me.getLoginToken(testParams[0].email, testParams[0].password).then(function () {
-            me.postQuestion(browser.params.loginToken, data.successfulQuestionTitle, data.successfulQuestionDetail).then(function () {
-                for (var currentParam = 0; currentParam < testParams.length; currentParam++) {
-                    me.getLoginToken(testParams[currentParam].email, testParams[currentParam].password)
-                        .then(function () {
-                            me.postAnswerApi(browser.params.loginToken, browser.params.questionID, data.successfulAnswer);
-                        });
-                }
-            });
+            logger.log(data.loggingLevel.ERROR, 'Message' + error);
         });
     };
 
