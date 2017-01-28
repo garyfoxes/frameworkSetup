@@ -3,7 +3,7 @@
  */
 /*
 var api = require('../../common/api.js')('url);
-browser.executeScript('return window.localStorage.getItem(\'ls.jwt\');').then(function (res) {
+browser.executeScript('return window.localStorage.getItem(\'item\');').then(function (res) {
     var jsonTest = JSON.parse(res);
     console.log(jsonTest.token);
     api.method(jsonTest.token).then(function (res) {
